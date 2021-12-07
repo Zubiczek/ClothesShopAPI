@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8xCU+lU4mmmlUKKA5NNWn43Jto8sc6EnpJJ+mrP6Kni9ez14G+V5kLmty4Irm9P/q0iAYa4dmdQKPaR1RMjMgA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bartek\\source\\repos\\ClothesShopAPI\\ClothesShopAPI\\ClothesShopAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bartek\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Bartek\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Bartek\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Bartek\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Bartek\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Bartek\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
