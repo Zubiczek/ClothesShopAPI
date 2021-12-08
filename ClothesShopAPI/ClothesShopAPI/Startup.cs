@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ClothesShopAPI.Database;
 
 namespace ClothesShopAPI
 {
@@ -26,7 +28,7 @@ namespace ClothesShopAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("ClothShopContext")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
