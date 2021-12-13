@@ -14,5 +14,11 @@ namespace ClothesShopAPI.Database.Entities
         public DateTime UpdatedOn { get; set; }
         public string User_Id { get; set; }
         public virtual UserEntity User { get; set; }
+        public bool IsActive()
+        {
+            DateTime now = DateTime.UtcNow;
+            if (now > this.ExpiresOn) return false;
+            else return true;
+        }
     }
 }
