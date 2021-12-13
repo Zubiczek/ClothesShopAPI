@@ -1,5 +1,6 @@
-﻿using ClothesShopAPI.Models.DTO.PostDTO;
+using ClothesShopAPI.Models.DTO.PostDTO;
 using ClothesShopAPI.Models.Others;
+using ClothesShopAPI.Services.CurrentLoggedInUser;
 using ClothesShopAPI.Services.LoginService;
 using ClothesShopAPI.Services.RegisterService;
 using Microsoft.AspNetCore.Authorization;
@@ -16,10 +17,13 @@ namespace ClothesShopAPI.Controllers
     {
         private readonly IRegisterService _registerService;
         private readonly ILoginService _loginService;
-        public UserController(IRegisterService registerService, ILoginService loginService)
+        private readonly ICurrentLoggedInUser _currentLoggedInUser;
+        public UserController(IRegisterService registerService, ILoginService loginService, 
+            ICurrentLoggedInUser currentLoggedInUser)
         {
             _registerService = registerService;
             _loginService = loginService;
+            _currentLoggedInUser = currentLoggedInUser;
         }
         [Route("register")]
         [AllowAnonymous]
@@ -80,13 +84,6 @@ namespace ClothesShopAPI.Controllers
             {
                 return BadRequest();
             }
-        }
-        [Route("test")]
-        [Authorize]
-        [HttpGet]
-        public IActionResult Test()
-        {
-            return Ok("Authorize page");
         }
     }
 }
