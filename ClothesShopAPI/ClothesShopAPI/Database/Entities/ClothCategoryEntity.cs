@@ -8,6 +8,7 @@ namespace ClothesShopAPI.Database.Entities
     public class ClothCategoryEntity
     {
         public int Id { get; set; }
+        [Required]
         public string CategoryName { get; set; }
         public virtual ICollection<ClothEntity> Clothes { get; set; }
         public ClothCategoryEntity()
