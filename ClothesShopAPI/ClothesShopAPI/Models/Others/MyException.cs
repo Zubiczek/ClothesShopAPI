@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,14 +11,21 @@ namespace ClothesShopAPI.Models.Others
         public int StatusCode { get; set; }
         public int ErrorCode { get; set; }
         public string StatusMessage { get; set; }
-        public MyException() { }
+        public MyException() 
+        {
+            this.StatusCode = 500;
+        }
         public MyException(string message)
         : base(message)
-        { }
+        {
+            this.StatusCode = 500;
+        }
 
         public MyException(string message, Exception innerException)
             : base(message, innerException)
-        { }
+        {
+            this.StatusCode = 500;
+        }
         public MyException(int code)
         {
             this.StatusCode = code;
