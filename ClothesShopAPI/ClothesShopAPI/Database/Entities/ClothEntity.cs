@@ -1,5 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,11 +10,18 @@ namespace ClothesShopAPI.Database.Entities
     public class ClothEntity
     {
         public int Id { get; set; }
+        [Required]
         public string Fullname { get; set; }
+        [Required]
+        [Range(0.0, 10000.0)]
         public decimal Price { get; set; }
+        [Required]
         public string Img { get; set; }
+        [DefaultValue(true)]
         public bool IsItInStock { get; set; }
+        [MaxLength(1000)]
         public string Description { get; set; }
+        [Range(0, 100)]
         public uint Discount { get; set; }
         public int Category_Id { get; set; }
         public virtual ClothCategoryEntity Category { get; set; }
