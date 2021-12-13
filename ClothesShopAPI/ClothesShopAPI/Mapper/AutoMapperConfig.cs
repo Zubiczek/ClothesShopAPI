@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using ClothesShopAPI.Database.Entities;
 using ClothesShopAPI.Models.DTO.PostDTO;
 using System;
@@ -14,6 +14,10 @@ namespace ClothesShopAPI.Mapper
             => new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<CreateUserDTO, UserEntity>();
+                cfg.CreateMap<AddOpinionDTO, UserOpinionEntity>();
+                cfg.CreateMap<AddCommentDTO, ClothCommentsEntity>();
+                cfg.CreateMap<NewAddressDTO, UserEntity>();
+                cfg.CreateMap<AddToBasketDTO, UserBasketEntity>();
             }).CreateMapper();
     }
 }
