@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 
 namespace ClothesShopAPI.Services.LoginService
 {
@@ -15,12 +17,14 @@ namespace ClothesShopAPI.Services.LoginService
         private readonly UserManager<UserEntity> _userManager;
         private readonly SignInManager<UserEntity> _signInManager;
         private readonly ITokenService _tokenService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public ClassicLoginService(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager, 
-            ITokenService tokenService)
+            ITokenService tokenService, IHttpContextAccessor httpContextAccessor)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<TokenOutput> SignIn(LoginDTO model)
         {
@@ -43,6 +47,7 @@ namespace ClothesShopAPI.Services.LoginService
         {
             int result = await _tokenService.RemoveRefreshToken(token);
             if (result != 0) throw new MyException(500);
+            await _httpContextAccessor.HttpContext.SignOutAsync();
         }
     }
 }
